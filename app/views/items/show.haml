@@ -1,0 +1,16 @@
+%p
+  #notice
+    = notice
+%p
+  %b Title:
+  = @item.title
+%p
+  %b Category:
+  = @item.category.name
+%p
+  %b Price
+  = @item.price
+%ul.images
+  -for attachment in @item.attachments
+    %li
+      =image_tag(attachment.image.thumb.url)

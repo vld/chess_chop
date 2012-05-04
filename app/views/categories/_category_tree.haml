@@ -1,0 +1,5 @@
+#category_tree
+  -while category
+    %li.category 
+      =link_to '<<' << category.name, category
+    - category = category.parent

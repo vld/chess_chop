@@ -1,0 +1,17 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  nav_back: "back"
+  the_sortable_tree:
+    new:
+      create: "Add Category"
+    controls:
+      edit_this:   "Edit Category"
+      delete: "Delete Category"
+      cant_be_deleted:  "Can't be deleted"
+      delete_nested_elements: "Has nested elements"
+      
+  item_new: "Add item"
+  category_new: "Add category"
+  category_manage: "Manage Category"

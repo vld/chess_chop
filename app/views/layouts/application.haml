@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title ChessShop
+    %meta{:charset => "utf-8"}
+    =stylesheet_link_tag  :application
+    =javascript_include_tag :application
+    = csrf_meta_tags
+    =yield :css
+    =yield :js
+  %body
+    #header
+      =render 'shared/header'
+    #main
+      =yield

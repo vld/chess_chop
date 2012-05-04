@@ -1,0 +1,51 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.images, ul.items{
+  padding: 0 10px;
+  list-style: none;
+  width: 100%;
+  li{
+    margin: 5px;
+    padding: 5px;
+    float: left;
+    overflow: hidden;
+  }
+}
+ul 
+.images li{
+  
+  
+}
+.items li{
+  width:  200px;
+  height: 340px;
+  background: rgba(0.7, 0.7, 0.7, 0.2);
+  a{
+    text-decoration:  none;
+    color: #333;
+  }
+  a:hover{
+    background: none;
+    color: #000;
+  }
+  .title{
+    font-size: 16px;
+  }
+  .price{
+    float:  right;
+  }
+}
+
+#main{
+  clear:  both;
+  margin: 0 auto;
+  width:  80%;
+}
+
+#header{
+  clear:  both;
+  margin: 0 auto;
+  width:  90%;
+  background: #fe1
+}
