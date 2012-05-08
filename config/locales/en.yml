@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  wellcome: "Wellcome to Chess shop"
+  set_language: "Choose your language"
   nav_back: "back"
   the_sortable_tree:
     new:
@@ -15,3 +17,12 @@ en:
   item_new: "Add item"
   category_new: "Add category"
   category_manage: "Manage Category"
+  
+  helpers:
+    label:
+      item:
+        title:
+        category:
+        price:
+        image:
+        

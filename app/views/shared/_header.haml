@@ -1,5 +1,15 @@
 %h2 
-  = t(:item_new)
-= link_to t(:item_new), new_item_path
-= link_to t(:category_new), new_category_path
-= link_to t(:category_manage), categories_path
+  = link_to t(:wellcome), root_path
+  %span{:style => 'float:right;'}
+    = t(:set_language)
+    = link_to 'EN', url_for(:locale => 'en')
+    = link_to 'RU', url_for(:locale => 'ru')
+- if admin_signed_in?
+  %li{:style => "list-style: none"}
+    = link_to t(:item_new), new_item_path
+    = link_to t(:category_new), new_category_path
+    = link_to t(:category_manage), categories_path
+    = link_to('Logout', destroy_admin_session_path, :method => :delete)        
+- else
+  %li{:style => "list-style: none"}
+    = link_to('Login', new_admin_session_path)

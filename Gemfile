@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'mysql2'
+gem 'pg'
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -11,6 +11,7 @@ gem 'awesome_nested_set'
 gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 gem 'the_sortable_tree'
 gem 'haml'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,8 +25,9 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov', :require => false
-  gem 'turn', :require => false
+  gem 'turn', '< 0.8.3', :require => false
 end

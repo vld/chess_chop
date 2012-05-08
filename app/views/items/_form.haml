@@ -14,7 +14,7 @@
     = f.text_field :title
   .field
     = f.label :category
-    = f.select :category_id, Category.all.collect {|c| c.name}
+    = f.collection_select :category_id, @categories, :id, :name
   .field
     = f.label :price
     = f.text_field :price

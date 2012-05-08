@@ -6,5 +6,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Category.create(:name => "Деревянные")
-Category.create(:name => "Стеклянные")
+versions = Version.create([{name: "en"}, {name: "ru"}])
+
+Category.create(:name => "--", :version => versions.first)
+Category.create(:name => "--", :version => versions.last)
+
+Category.create(:name => "Wooden", :version => versions.first)
+Category.create(:name => "Glass", :version => versions.first)
+
+Category.create(:name => "Деревянные", :version => versions.last)
+Category.create(:name => "Стеклянные", :version => versions.last)
+

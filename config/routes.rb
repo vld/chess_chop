@@ -1,4 +1,7 @@
 ChessShop::Application.routes.draw do
+
+  devise_for :admins
+
   resources :categories do
     post  :rebuild, :on => :collection
   end

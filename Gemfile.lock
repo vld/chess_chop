@@ -39,6 +39,7 @@ GEM
     arel (3.0.2)
     awesome_nested_set (2.1.3)
       activerecord (>= 3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -71,6 +72,11 @@ GEM
       nokogiri (>= 1.5.0)
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
+    database_cleaner (0.7.1)
+    devise (1.5.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.3.1)
@@ -98,8 +104,9 @@ GEM
     mini_magick (3.3)
       subexec (~> 0.1.0)
     multi_json (1.3.4)
-    mysql2 (0.3.11)
     nokogiri (1.5.2)
+    orm_adapter (0.0.5)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -168,12 +175,14 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.9.5)
-      ansi
+    turn (0.8.2)
+      ansi (>= 1.2.2)
     tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.0)
+      rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -187,16 +196,18 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   cucumber-rails-training-wheels
+  database_cleaner
+  devise
   haml
   jquery-rails
   launchy
   mini_magick
-  mysql2
   nested_form!
+  pg
   rails (= 3.2.3)
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
   the_sortable_tree
-  turn
+  turn (< 0.8.3)
   uglifier (>= 1.0.3)

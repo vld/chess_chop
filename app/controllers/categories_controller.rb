@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
   include TheSortableTreeController::Rebuild
-  
+  before_filter :authenticate_admin!, :except => [:show]
+    
   def index
-    @categories = Category.nested_set.all
+    @categories = get_version.categories.nested_set.all
   end
   
   def show
@@ -12,15 +13,17 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @version = get_version
   end
 
   def edit
     @category = get_category(params[:id])
+    @version = get_version
   end
 
   def create
     @category = Category.new(params[:category])
-
+    @category.version = get_version
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
@@ -48,6 +51,10 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = get_category(params[:id])
+    no_category = Category.find_by_name_and_version_id('--', get_version.id)
+    for item in @category.items
+      item.update_attributes(:category_id => no_category.id)
+    end
     @category.destroy
 
     respond_to do |format|

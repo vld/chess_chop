@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-
+  before_filter :authenticate_admin!, :except => [:show, :index]
+  
   def index
-    @items = Item.all
+    @items = get_version.items
   end
 
   def show
@@ -10,14 +11,15 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @categories = get_version.categories
   end
 
   def edit
     @item = get_item(params[:id])
+    @categories = get_version.categories
   end
 
   def create
-    params[:item][:category] = Category.last
     @item = Item.new(params[:item])
 
     respond_to do |format|
@@ -25,6 +27,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else
+        @categories = get_version.categories
         format.html { render action: "new" }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -39,6 +42,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { head :ok }
       else
+        @categories = get_version.categories
         format.html { render action: "edit" }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
