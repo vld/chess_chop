@@ -12,6 +12,7 @@ gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 gem 'the_sortable_tree'
 gem 'haml'
 gem 'devise'
+gem 'spreadsheet'
 
 # Gems used only for assets and not required
 # in production environments by default.

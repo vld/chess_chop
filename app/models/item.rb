@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible  :title, :price, :category_id, :attachments_attributes
+  attr_accessible  :title, :price, :category_id, :attachments, :attachments_attributes
   
   belongs_to  :category
   belongs_to  :verion
@@ -7,4 +7,5 @@ class Item < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
   validates :attachments, :presence => true
   validates :title, :presence => true
+  validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
 end
