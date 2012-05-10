@@ -59,6 +59,32 @@ class ItemsController < ApplicationController
     end
   end
   
+  def load_from_excel
+  end
+  
+  def upload_from_excel
+    file = ExcelUploader.new
+    file.store!(params[:excel_file])
+    sheet1 = Spreadsheet.open("#{file.store_path}").worksheets[0]
+    @items = []
+    counter = 0
+    @errors = Hash.new
+    sheet1.each do |row|
+      counter += 1
+      item = Item.new
+      item.title = row[0]
+      item.category = Category.find_by_name(row[1])
+      item.price = row[2]
+      if item.valid?
+        @items << item
+      else
+        @errors[counter.to_s] = item.errors
+      end
+    end
+    @items.each {|i| i.save} unless @errors.any? 
+    file.remove!
+  end
+  
   private
   
   def get_item(id)

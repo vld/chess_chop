@@ -1,12 +1,11 @@
 %p
   #notice
     = notice
+= render '/categories/category_tree', :category => @item.category
+%br
 %p
   %b Title:
   = @item.title
-%p
-  %b Category:
-  = @item.category.name
 %p
   %b Price
   = @item.price

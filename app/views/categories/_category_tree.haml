@@ -1,5 +1,8 @@
 #category_tree
   -while category
     %li.category 
-      =link_to '<<' << category.name, category
+      &laquo;
+      = link_to category.name, category
     - category = category.parent
+  %li.category
+    = link_to t(:all_categories), categories_path

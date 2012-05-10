@@ -8,12 +8,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 versions = Version.create([{name: "en"}, {name: "ru"}])
 
+Admin.create(:email => "admin@chess-shop.com", :password => '123456', :password_confirmation => '123456')
 Category.create(:name => "--", :version => versions.first)
 Category.create(:name => "--", :version => versions.last)
-
-Category.create(:name => "Wooden", :version => versions.first)
-Category.create(:name => "Glass", :version => versions.first)
-
-Category.create(:name => "Деревянные", :version => versions.last)
-Category.create(:name => "Стеклянные", :version => versions.last)
-

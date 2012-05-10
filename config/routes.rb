@@ -3,10 +3,14 @@ ChessShop::Application.routes.draw do
   devise_for :admins
 
   resources :categories do
-    post  :rebuild, :on => :collection
+    get :manage, :on => :collection
+    post :rebuild, :on => :collection
   end
 
-  resources :items
+  resources :items do
+    post :upload_from_excel, :on =>  :collection
+    get :load_from_excel, :on => :collection  
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

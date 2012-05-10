@@ -1,8 +1,12 @@
 class CategoriesController < ApplicationController
   include TheSortableTreeController::Rebuild
-  before_filter :authenticate_admin!, :except => [:show]
+  before_filter :authenticate_admin!, :except => [:show, :index]
     
   def index
+    @categories = get_version.categories.nested_set.all
+  end
+  
+  def manage
     @categories = get_version.categories.nested_set.all
   end
   

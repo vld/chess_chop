@@ -2,9 +2,20 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  login: "Login"
+  logout: "Logout"
   wellcome: "Wellcome to Chess shop"
   set_language: "Choose your language"
+  load_excel: "Load from excel"
   nav_back: "back"
+  all_categories: "All categories"
+  item_new: "Add item"
+  item_edit: "Edit item"
+  item_delete: "Delete item"
+  item_confirm: "Are you sure?"
+  category_new: "Add category"
+  category_manage: "Manage Category"
+
   the_sortable_tree:
     new:
       create: "Add Category"
@@ -13,11 +24,7 @@ en:
       delete: "Delete Category"
       cant_be_deleted:  "Can't be deleted"
       delete_nested_elements: "Has nested elements"
-      
-  item_new: "Add item"
-  category_new: "Add category"
-  category_manage: "Manage Category"
-  
+        
   helpers:
     label:
       item:
