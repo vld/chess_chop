@@ -4,6 +4,7 @@
 ru:
   login: "Войти"
   logout: "Выйти"
+  listing_items:  "Товары"
   wellcome: "Добро пожаловать в магазин"
   set_language: "Выберите язык"
   load_excel: "Загрузить из Excel-файла"

@@ -4,6 +4,7 @@
 en:
   login: "Login"
   logout: "Logout"
+  listing_items:  "Listing items"
   wellcome: "Wellcome to Chess shop"
   set_language: "Choose your language"
   load_excel: "Load from excel"
