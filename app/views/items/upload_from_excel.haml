@@ -1,0 +1,17 @@
+- unless @errors.empty?
+  %h2 Failure
+  #error_explanation
+    %h2 
+      =pluralize(@errors.count, "error")
+      prevent this excel export:
+    %ul
+      -@errors.each do |error|
+        %li 
+          Problems in line number 
+          =error[0]
+          -error[1].full_messages.each do |msg|
+            %p 
+              = msg
+- else
+  %h2 Success
+  = render '/items/items', :items => @items

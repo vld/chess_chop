@@ -1,0 +1,4 @@
+=form_tag '/items/upload_from_excel', :multipart => true
+%p= file_field_tag  'excel_file'
+%p= submit_tag t(:load_excel)
+
